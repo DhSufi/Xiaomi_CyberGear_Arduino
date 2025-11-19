@@ -31,6 +31,7 @@ class XiaomiCyberGearDriver {
         void enable_motor();
         void stop_motor();
         void set_run_mode(uint8_t mode);
+        
 
         void set_limit_speed(float speed);
         void set_limit_current(float current);
@@ -53,6 +54,8 @@ class XiaomiCyberGearDriver {
         void set_speed_kp(float kp);
         void set_speed_ki(float ki);
         void set_speed_ref(float speed);
+
+        void set_zero_position();
 
         uint8_t get_run_mode() const;
         uint8_t get_motor_can_id() const;
