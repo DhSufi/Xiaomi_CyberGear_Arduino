@@ -146,6 +146,11 @@ void XiaomiCyberGearDriver::set_speed_ref(float speed){
     _send_can_float_package(_cybergear_can_id, ADDR_SPEED_REF, speed, V_MIN, V_MAX);
 }
 
+void XiaomiCyberGearDriver::set_zero_position(){
+    uint8_t data[8] = {0x00};
+    _send_can_package(_cybergear_can_id, CMD_SET_MECH_POSITION_TO_ZERO, _master_can_id, 8, data);
+}
+
 void XiaomiCyberGearDriver::set_motor_can_id(uint8_t can_id){
     uint8_t data[8] = {0x00};
     uint16_t option = can_id << 8 | _master_can_id;
